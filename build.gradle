@@ -21,10 +21,7 @@ test {
   reports {
     outputs.dir("$buildDir/test-results/test")
   }
-}
-
-jacoco {
-  toolVersion = "0.8.11"
+  finalizedBy jacocoTestReport
 }
 
 jacocoTestCoverageVerification {
@@ -41,6 +38,7 @@ jacocoTestReport {
   reports {
     xml.enabled(true)
     outputs.dir("$buildDir/reports")
+    html.outputLocation=layout.buildDirectory.dir('reports/jacoco/test')
   }
 }
 
