@@ -127,8 +127,8 @@ Bagarre uneBagarre;
 
         /* THEN */
         assertThat(futurVainqueur)
-                .succeedsWithin(Duration.ofSeconds(2));
-                // A COMPLETER
+                .succeedsWithin(Duration.ofSeconds(2))
+                .satisfies(pokemon -> assertThat(pokemon.getNom()).isEqualTo("pikachu"));
     }
 
     @Test
@@ -142,7 +142,7 @@ Bagarre uneBagarre;
 
         /* THEN */
         assertThat(futurVainqueur)
-                .succeedsWithin(Duration.ofSeconds(2));
-                // A COMPLETER
+                .succeedsWithin(Duration.ofSeconds(2))
+                .satisfies(pokemon -> assertThat(pokemon.getNom()).isEqualTo("scarabrute"));
     }
 }
